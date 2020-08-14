@@ -29,7 +29,7 @@ entries:
     created: "2020-08-13T22:22:52.542830906-05:00"
     description: A Traefik based Kubernetes ingress controller
     digest: f9c18a7f3a105301d3c9e447c5747ca6d9b6fc2fa0721d7d78206707722d7cf9
-    home: https://traefik.io/
+    home: https://itscontained.io/charts
     icon: https://raw.githubusercontent.com/containous/traefik/v2.2/docs/content/assets/img/traefik.logo.png
     keywords:
     - traefik
