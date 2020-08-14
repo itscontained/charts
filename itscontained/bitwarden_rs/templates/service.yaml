@@ -11,5 +11,11 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+    {{- if .Values.bitwarden_rs.websockets.enabled }}
+    - port: {{ .Values.bitwarden_rs.websockets.port }}
+      targetPort: websocket
+      protocol: TCP
+      name: websocket
+    {{- end }}
   selector:
     {{- include "bitwarden_rs.selectorLabels" . | nindent 4 }}

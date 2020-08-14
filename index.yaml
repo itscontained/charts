@@ -3,7 +3,29 @@ entries:
   bitwarden_rs:
   - apiVersion: v2
     appVersion: 1.16.3
-    created: "2020-08-14T01:12:19.162577993-05:00"
+    created: "2020-08-14T01:17:34.987476358-05:00"
+    description: Unofficial Bitwarden compatible server written in Rust
+    digest: 7a1130255bead08a4bbe77948186215a30991455d09f23547edd474a023a5935
+    home: https://charts.itscontained.io
+    icon: https://raw.githubusercontent.com/bitwarden/brand/master/icons/256x256.png
+    keywords:
+    - bitwarden
+    - bitwarden_rs
+    - password
+    - rust
+    maintainers:
+    - email: nick@cajun.pro
+      name: Nicholas St. Germain
+    name: bitwarden_rs
+    sources:
+    - https://github.com/dani-garcia/bitwarden_rs
+    type: application
+    urls:
+    - https://charts.itscontained.io/packages/bitwarden_rs-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.3
+    created: "2020-08-14T01:17:34.986820342-05:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: eac7ddd6bf0c676137865e34d81f77fea49193b9ba377209c18991ad8c098e22
     home: https://charts.itscontained.io
@@ -25,7 +47,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.3
-    created: "2020-08-14T01:12:19.161801854-05:00"
+    created: "2020-08-14T01:17:34.986201833-05:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 0400878cab008a461db4e1bfef64a554946de66b9d45ecb02962ada4d843de8e
     home: https://charts.itscontained.io
@@ -47,7 +69,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.3
-    created: "2020-08-14T01:12:19.16077895-05:00"
+    created: "2020-08-14T01:17:34.985560081-05:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: a299b309395bce38026e724d0948273e0e6694b09576e2a0592a2aca197d68b1
     home: https://itscontained.io/charts
@@ -70,7 +92,7 @@ entries:
   traefik:
   - apiVersion: v1
     appVersion: 2.2.5
-    created: "2020-08-14T01:12:19.164325603-05:00"
+    created: "2020-08-14T01:17:34.989322467-05:00"
     description: A Traefik based Kubernetes ingress controller
     digest: f9c18a7f3a105301d3c9e447c5747ca6d9b6fc2fa0721d7d78206707722d7cf9
     home: https://traefik.io/
@@ -91,4 +113,4 @@ entries:
     urls:
     - https://charts.itscontained.io/packages/traefik-8.10.0.tgz
     version: 8.10.0
-generated: "2020-08-14T01:12:19.158960232-05:00"
+generated: "2020-08-14T01:17:34.98485973-05:00"
