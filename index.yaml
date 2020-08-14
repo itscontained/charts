@@ -6,7 +6,7 @@ entries:
     created: "2020-08-14T00:17:07.718273846-05:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: a299b309395bce38026e724d0948273e0e6694b09576e2a0592a2aca197d68b1
-    home: https://itscontained.io/charts
+    home: https://charts.itscontained.io
     icon: https://raw.githubusercontent.com/bitwarden/brand/master/icons/256x256.png
     keywords:
     - bitwarden

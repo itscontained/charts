@@ -2,14 +2,14 @@ apiVersion: v2
 name: bitwarden_rs
 description: Unofficial Bitwarden compatible server written in Rust
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: 1.16.3
 keywords:
   - bitwarden
   - bitwarden_rs
   - password
   - rust
-home: https://itscontained.io/charts
+home: https://charts.itscontained.io
 sources:
   - https://github.com/dani-garcia/bitwarden_rs
 maintainers:
