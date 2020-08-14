@@ -1,9 +1,8 @@
-# Default values for bitwarden_rs.
-
+# Default values for traefik-forward-auth.
 replicaCount: 1
 
 image:
-  repository: bitwardenrs/server
+  repository: thomseddon/traefik-forward-auth
   pullPolicy: IfNotPresent
   tag: ""
 
@@ -11,51 +10,60 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-bitwarden_rs:
-  domain: ""
-  signupsAllowed: false
-  websockets:
-    enabled: true
-    port: 3012
-  admin:
-    enabled: true
-    disableAdminToken: false
-    existingSecret:
+traefikForwardAuth:
+  logging:
+    level: warn
+    format: text
+  authHost: ""
+  restrictions:
+    domain: ""
+    whitelist: ""
+  lifetime: 43200
+  cookie:
+    domain: ""
+    insecure: false
+    name: _forward_auth
+    csrfName: _forward_auth_csrf
+  default:
+    action: auth
+    provider: google
+  logoutRedirect: ""
+  urlPath: /_oauth
+  secret: ""
+  rules: {}
+    # example_public:
+    #   action: allow
+    #   rule: Host("stats.example.com") && PathPrefix("/api/public")
+  providers:
+    google:
       enabled: false
-      name: ""
-      tokenKey: ""
-  # Enable SMTP. https://github.com/dani-garcia/bitwarden_rs/wiki/SMTP-configuration
-  smtp:
-    enabled: false
-    # SMTP hostname, required if SMTP is enabled
-    host: ""
-    # SMTP sender e-mail address, required if SMTP is enabled
-    from: ""
-    # SMTP sender name, defaults to 'Bitwarden_RS'
-    fromName: ""
-    # Enable SSL connection
-    ssl: true
-    # SMTP port
-    port: 587
-    # SMTP username
-    user: ""
-    # SMTP password. Required is user is specified, ignored if no user provided
-    password: ""
-    # Use existing secret for SMTP authentication
-    existingSecret:
+      clientId: ""
+      clientSecret: ""
+      prompt: ""
+    oidc:
       enabled: false
-      name: ""
-      userKey: ""
-      passwordKey: ""
+      issuerUrl: ""
+      clientId: ""
+      clientSecret: ""
+      resource: ""
+    genericOauth:
+      enabled: false
+      authUrl: ""
+      tokenUrl: ""
+      userUrl: ""
+      clientId: ""
+      clientSecret: ""
+      scope: ""
+      tokenStyle: ""
+      resource: ""
 
-persistence:
-  enabled: false
-  size: 1Gi
-  accessMode: ReadWriteOnce
-  ## Persistent Volume storage class
-  # storageClass: "-"
-  ## Use existing Persistent Volume Claim
-  # existingClaim:
+envFrom: {}
+  # SECRET:
+  #   name: "traefik-forward-auth-secrets"
+  #   key: "secret"
+  # PROVIDERS_GOOGLE_CLIENT_SECRET:
+  #   name: "traefik-forward-auth-secrets"
+  #   key: "google-client-secret"
 
 serviceAccount:
   # Specifies whether a service account should be created

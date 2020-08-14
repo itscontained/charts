@@ -1,0 +1,179 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "traefik-forward-auth.fullname" . }}
+  labels:
+    {{- include "traefik-forward-auth.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "traefik-forward-auth.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "traefik-forward-auth.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "traefik-forward-auth.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: LOG_LEVEL
+            value: {{ .Values.traefikForwardAuth.logging.level | quote }}
+          - name: LOG_FORMAT
+            value: {{ .Values.traefikForwardAuth.logging.format | quote }}
+            {{- if .Values.traefikForwardAuth.authHost }}
+          - name: AUTH_HOST
+            value: {{ .Values.traefikForwardAuth.authHost | quote }}
+            {{- end }}
+            {{- with .Values.traefikForwardAuth.cookie }}
+          - name: COOKIE_DOMAIN
+            value: {{ .domain | quote }}
+          - name: INSECURE_COOKIE
+            value: {{ .insecure | quote }}
+          - name: COOKIE_NAME
+            value: {{ .name | quote }}
+          - name: CSRF_COOKIE_NAME
+            value: {{ .csrfName | quote }}
+            {{- end }}
+          - name: DEFAULT_ACTION
+            value: {{ .Values.traefikForwardAuth.default.action | quote }}
+          - name: DEFAULT_PROVIDER
+            value: {{ .Values.traefikForwardAuth.default.provider | quote }}
+            {{- if .Values.traefikForwardAuth.restrictions.domain }}
+          - name: DOMAIN
+            value: {{ .Values.traefikForwardAuth.restrictions.domain | quote }}
+            {{- end }}
+            {{- if .Values.traefikForwardAuth.restrictions.whitelist }}
+          - name: WHITELIST
+            value: {{ .Values.traefikForwardAuth.restrictions.whitelist | quote }}
+            {{- end }}
+          - name: LIFETIME
+            value: {{ .Values.traefikForwardAuth.lifetime | quote }}
+            {{- if .Values.traefikForwardAuth.logoutRedirect }}
+          - name: LOGOUT_REDIRECT
+            value: {{ .Values.traefikForwardAuth.logoutRedirect | quote }}
+            {{- end }}
+          - name: URL_PATH
+            value: {{ .Values.traefikForwardAuth.urlPath | quote }}
+            {{- if .Values.traefikForwardAuth.secret }}
+          - name: SECRET
+            value: {{ .Values.traefikForwardAuth.secret | quote }}
+            {{- end }}
+            {{- with .Values.traefikForwardAuth.providers }}
+              {{- if .google.enabled }}
+                {{- if .google.clientId }}
+          - name: PROVIDERS_GOOGLE_CLIENT_ID
+            value: {{ .google.clientId | quote }}
+                {{- end }}
+                {{- if .google.clientSecret }}
+          - name: PROVIDERS_GOOGLE_CLIENT_SECRET
+            value: {{ .google.clientSecret | quote }}
+                {{- end }}
+                {{- if .google.prompt }}
+          - name: PROVIDERS_GOOGLE_PROMPT
+            value: {{ .google.prompt | quote }}
+                {{- end }}
+              {{- end }}
+              {{- if .oidc.enabled }}
+                {{- if .oidc.clientId }}
+          - name: PROVIDERS_OIDC_CLIENT_ID
+            value: {{ .oidc.clientId | quote }}
+                {{- end }}
+                {{- if .oidc.clientSecret }}
+          - name: PROVIDERS_OIDC_CLIENT_SECRET
+            value: {{ .oidc.clientSecret | quote }}
+                {{- end }}
+                {{- if .oidc.issuerUrl }}
+          - name: PROVIDERS_OIDC_ISSUER_URL
+            value: {{ .oidc.issuerUrl | quote }}
+                {{- end }}
+                {{- if .oidc.resource }}
+          - name: PROVIDERS_OIDC_RESOURCE
+            value: {{ .oidc.resource | quote }}
+                {{- end }}
+              {{- end }}
+              {{- if .genericOauth.enabled }}
+                {{- if .genericOauth.clientId }}
+          - name: PROVIDERS_GENERIC_OAUTH_CLIENT_ID
+            value: {{ .genericOauth.clientId | quote }}
+                {{- end }}
+                {{- if .genericOauth.clientSecret }}
+          - name: PROVIDERS_GENERIC_OAUTH_CLIENT_SECRET
+            value: {{ .genericOauth.clientSecret | quote }}
+                {{- end }}
+                {{- if .genericOauth.authUrl }}
+          - name: PROVIDERS_GENERIC_OAUTH_AUTH_URL
+            value: {{ .genericOauth.authUrl | quote }}
+                {{- end }}
+                {{- if .genericOauth.tokenUrl }}
+          - name: PROVIDERS_GENERIC_OAUTH_TOKEN_URL
+            value: {{ .genericOauth.tokenUrl | quote }}
+                {{- end }}
+                {{- if .genericOauth.userUrl }}
+          - name: PROVIDERS_GENERIC_OAUTH_USER_URL
+            value: {{ .genericOauth.userUrl | quote }}
+                {{- end }}
+                {{- if .genericOauth.resource }}
+          - name: PROVIDERS_GENERIC_OAUTH_RESOURCE
+            value: {{ .genericOauth.resource | quote }}
+                {{- end }}
+                {{- if .genericOauth.scope }}
+          - name: PROVIDERS_GENERIC_OAUTH_SCOPE
+            value: {{ .genericOauth.scope | quote }}
+                {{- end }}
+                {{- if .genericOauth.tokenStyle }}
+          - name: PROVIDERS_GENERIC_OAUTH_TOKEN_STYLE
+            value: {{ .genericOauth.tokenStyle | quote }}
+                {{- end }}
+              {{- end }}
+            {{- end }}
+            {{- range $envvar, $config := .Values.envFrom }}
+          - name: {{ $envvar }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ $config.name }}
+                key: {{ $config.key }}
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: 4181
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
