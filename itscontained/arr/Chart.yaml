@@ -2,7 +2,7 @@ apiVersion: v2
 name: arr
 description: Radarr/Sonarr/Lidarr Chart
 type: application
-version: 1.0.0
+version: 1.0.1
 keywords:
   - radarr
   - sonarr
