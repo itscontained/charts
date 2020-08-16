@@ -23,10 +23,16 @@ spec:
       imagePullSecrets:
       {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- with .Values.podSecurityContext }}
       securityContext:
-      {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
         - name: {{ template "arr.fullname" . }}
+          {{- with .Values.securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
           image: "{{ .Values.image.organization }}/{{ required "Repository is required" .Values.image.repository }}:{{ required "Image tag is required" .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
@@ -64,8 +70,10 @@ spec:
           {{- if .Values.additionalVolumeMounts }}
           {{- toYaml .Values.additionalVolumes | nindent 12 }}
           {{- end }}
+          {{- with .Values.resources }}
           resources:
-      {{ toYaml .Values.resources | indent 12 }}
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
       volumes:
         - name: config
           {{- if .Values.persistence.config.enabled }}

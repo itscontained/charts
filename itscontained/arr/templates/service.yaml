@@ -7,9 +7,9 @@ metadata:
   {{- if .Values.service.labels }}
   {{ toYaml .Values.service.labels | indent 4 }}
   {{- end }}
-  {{- with .Values.service.annotations }}
+  {{- with .Values.ingress.annotations }}
   annotations:
-  {{ toYaml . | indent 4 }}
+  {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
   type: {{ .Values.service.type }}
@@ -18,9 +18,9 @@ spec:
       port: {{ template "arr.portSelector" . }}
       protocol: TCP
       targetPort: http
-      {{ if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
-      nodePort: {{.Values.service.nodePort}}
-      {{ end }}
+      {{- if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
+      nodePort: {{ .Values.service.nodePort }}
+      {{- end }}
   {{- toYaml .Values.service.additionalSpec | indent 2 }}
   selector:
   {{- include "arr.selectorLabels" . | nindent 4 }}
