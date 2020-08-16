@@ -1,10 +1,10 @@
 apiVersion: v1
 entries:
-  Arr:
+  arr:
   - apiVersion: v2
-    created: "2020-08-16T02:29:38.818792819-05:00"
+    created: "2020-08-16T03:08:47.85571102-05:00"
     description: Radarr/Sonarr/Lidarr Chart
-    digest: 9a0e11806773b299f6d81e0bd2d6b87924a0664d8674b0dc25f38f07fbd24375
+    digest: 945a04413d15ad5b491be55591d71fe0add448db998d3c5ff7e7f986c5a717f1
     home: https://github.com/billimek/billimek-charts/tree/master/charts/arr
     icon: https://avatars3.githubusercontent.com/u/25025331?s=400&v=4
     keywords:
@@ -17,7 +17,7 @@ entries:
     maintainers:
     - email: nick@cajun.pro
       name: DirtyCajunRice
-    name: Arr
+    name: arr
     sources:
     - https://github.com/Radarr/Radarr
     - https://github.com/Sonarr/Sonarr
@@ -27,12 +27,12 @@ entries:
     - https://hub.docker.com/r/itscontained/lidarr
     type: application
     urls:
-    - https://charts.itscontained.io/packages/Arr-1.0.0.tgz
+    - https://charts.itscontained.io/packages/arr-1.0.0.tgz
     version: 1.0.0
   bitwarden_rs:
   - apiVersion: v2
     appVersion: 1.16.3
-    created: "2020-08-16T02:29:38.819475139-05:00"
+    created: "2020-08-16T03:08:47.856265128-05:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: a3421b699b9d2c3e61d3bac131ee679e818200725f691c883894226bb5546a1f
     home: https://charts.itscontained.io
@@ -55,7 +55,7 @@ entries:
   traefik:
   - apiVersion: v1
     appVersion: 2.2.5
-    created: "2020-08-16T02:29:38.821608991-05:00"
+    created: "2020-08-16T03:08:47.857275943-05:00"
     description: A Traefik based Kubernetes ingress controller
     digest: f9c18a7f3a105301d3c9e447c5747ca6d9b6fc2fa0721d7d78206707722d7cf9
     home: https://traefik.io/
@@ -79,7 +79,7 @@ entries:
   traefik-forward-auth:
   - apiVersion: v2
     appVersion: 2.2.0
-    created: "2020-08-16T02:29:38.822248248-05:00"
+    created: "2020-08-16T03:08:47.857777338-05:00"
     description: A minimal forward authentication service that provides OAuth/SSO
       login and authentication for the traefik reverse proxy/load balancer
     digest: 3f99bec1f5593a843d2d2c2d82bc446d4f7b3bc6d86514d6f0c0a8aaa8847379
@@ -100,4 +100,4 @@ entries:
     urls:
     - https://charts.itscontained.io/packages/traefik-forward-auth-0.1.1.tgz
     version: 0.1.1
-generated: "2020-08-16T02:29:38.81801267-05:00"
+generated: "2020-08-16T03:08:47.854600553-05:00"
