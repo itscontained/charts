@@ -69,7 +69,7 @@ spec:
               {{- end }}
             {{- end }}
           {{- if .Values.additionalVolumeMounts }}
-          {{- toYaml .Values.additionalVolumes | nindent 12 }}
+          {{- toYaml .Values.additionalVolumeMounts | nindent 12 }}
           {{- end }}
           resources:
       {{ toYaml .Values.resources | indent 12 }}
