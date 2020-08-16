@@ -71,8 +71,10 @@ spec:
           {{- if .Values.additionalVolumeMounts }}
           {{- toYaml .Values.additionalVolumeMounts | nindent 12 }}
           {{- end }}
+          {{- with .Values.resources }}
           resources:
-      {{ toYaml .Values.resources | indent 12 }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
       volumes:
         - name: config
           {{- if .Values.persistence.config.enabled }}

@@ -21,6 +21,8 @@ spec:
       {{- if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
       nodePort: {{ .Values.service.nodePort }}
       {{- end }}
-  {{- toYaml .Values.service.additionalSpec | indent 2 }}
+  {{- with .Values.service.additionalSpec }}
+  {{- toYaml . | nindent 2 }}
+  {{- end }}
   selector:
   {{- include "arr.selectorLabels" . | nindent 4 }}
