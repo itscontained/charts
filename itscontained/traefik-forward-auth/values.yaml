@@ -76,7 +76,7 @@ traefikForwardAuth:
       tokenStyle: ""
       resource: ""
 
-env: {}
+env: []
 
 serviceAccount:
   # Specifies whether a service account should be created
