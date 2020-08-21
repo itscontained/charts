@@ -12,28 +12,47 @@ fullnameOverride: ""
 
 traefikForwardAuth:
   logging:
-    level: warn
-    format: text
+    # [trace|debug|info|warn|error|fatal|panic] Log level (default: warn)
+    level: ""
+    # [text|json|pretty] Log format (default: text)
+    format: ""
+  # Single host to use when returning from 3rd party auth
   authHost: ""
   restrictions:
+    # Only allow given email domains. (Comma delimited)
     domain: ""
+    # Only allow given email addresses. (Comma delimited)
     whitelist: ""
-  lifetime: 43200
+  # Lifetime in seconds (default: 43200)
+  lifetime: ""
   cookie:
+    # Domain(s) to set auth cookie on. (Comma delimited)
     domain: ""
-    insecure: false
-    name: _forward_auth
-    csrfName: _forward_auth_csrf
+    # Use insecure cookies
+    insecure: ""
+    # Cookie Name (default: _forward_auth)
+    name: ""
+    # CSRF Cookie Name (default: _forward_auth_csrf)
+    csrfName: ""
   default:
-    action: auth
-    provider: google
+    # [auth|allow] Default action (default: auth)
+    action: ""
+    # [google|oidc|generic-oauth] Default provider (default: google)
+    provider: ""
+  # URL to redirect to following logout
   logoutRedirect: ""
-  urlPath: /_oauth
+  # Callback URL Path (default: /_oauth)
+  urlPath: ""
+  # Secret used for signing. If empty, one will be generated. If specifying your own in env use "-"
   secret: ""
+  # Not yet implemented
   rules: {}
     # example_public:
     #   action: allow
     #   rule: Host("stats.example.com") && PathPrefix("/api/public")
+  middleware:
+    enabled: false
+    name: ""
   providers:
     google:
       enabled: false
@@ -57,13 +76,7 @@ traefikForwardAuth:
       tokenStyle: ""
       resource: ""
 
-envFrom: {}
-  # SECRET:
-  #   name: "traefik-forward-auth-secrets"
-  #   key: "secret"
-  # PROVIDERS_GOOGLE_CLIENT_SECRET:
-  #   name: "traefik-forward-auth-secrets"
-  #   key: "google-client-secret"
+env: {}
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -90,6 +103,13 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 4181
+  ## Provide any additional annotations which may be required. This can be used to
+  ## set the LoadBalancer service type to internal only.
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
+  ##
+  annotations: {}
+  labels: {}
+  additionalSpec: {}
 
 ingress:
   enabled: false
