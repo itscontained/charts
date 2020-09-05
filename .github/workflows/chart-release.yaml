@@ -26,7 +26,64 @@ jobs:
           charts_repo_url: https://charts.itscontained.io
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Instasll chart-releaser
+        run: |
+          wget https://github.com/helm/chart-releaser/releases/download/v1.0.0/chart-releaser_1.0.0_linux_amd64.tar.gz
+          tar xzvf chart-releaser_1.0.0_linux_amd64.tar.gz cr
+      - name: Release Chart
+        run: |
+          lookup_latest_tag() {
+              git fetch --tags > /dev/null 2>&1
+              if ! git describe --tags --abbrev=0 2> /dev/null; then
+                  git rev-list --max-parents=0 --first-parent HEAD
+              fi
+          }
+          filter_charts() {
+              while read chart; do
+                  [[ ! -d "$chart" ]] && continue
+                  local file="$chart/Chart.yaml"
+                  if [[ -f "$file" ]]; then
+                      echo $chart
+                  else
+                     echo "WARNING: $file is missing, assuming that '$chart' is not a Helm chart. Skipping." 1>&2
+                  fi
+              done
+          }
+          lookup_changed_charts() {
+              local commit="$1"
+              local changed_files
+              changed_files=$(git diff --find-renames --name-only "$commit" -- "itscontained/")
+              local fields='1,2'
+              cut -d '/' -f "$fields" <<< "$changed_files" | uniq | filter_charts
+          }
+          package_chart() {
+              local chart="$1"
+              echo "Packaging chart '$chart'..."
+              helm package "$chart" --destination .cr-release-packages --dependency-update
+          }
+
+          local version="$DEFAULT_CHART_RELEASER_VERSION"
+          latest_tag=$(lookup_latest_tag)
+          echo "Discovering changed charts since '$latest_tag'..."
+          changed_charts=()
+          readarray -t changed_charts <<< "$(lookup_changed_charts "$latest_tag")"
+          if [[ -n "${changed_charts[*]}" ]]; then
+              rm -rf .cr-release-packages
+              mkdir -p .cr-release-packages
+              for chart in "${changed_charts[@]}"; do
+                  if [[ -d "$chart" ]]; then
+                      package_chart "$chart"
+                  else
+                      echo "Chart '$chart' no longer exists in repo. Skipping it..."
+                  fi
+              done
+              ./cr upload -t ${CR_TOKEN} && ./cr index
+          else
+              echo "Nothing to do. No chart changes detected."
+          fi
+        env:
+          CR_CHARTS_REPO: "https://charts.itscontained.io"
           CR_INDEX_PATH: "index.yaml"
           CR_OWNER: "itscontained"
           CR_GIT_REPO: "charts"
-          CR_PACKAGE_PATH: "packages/"
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
