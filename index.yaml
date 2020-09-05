@@ -1,5 +1,130 @@
 apiVersion: v1
 entries:
+  Lidarr:
+  - apiVersion: v2
+    appVersion: 0.7.1.1785
+    created: "2020-09-05T08:07:06.984854154Z"
+    dependencies:
+    - alias: lidarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Lidarr Chart
+    digest: d88110414f6d67557522c9f950a3ec06dccef3235d0073a6c6c3204492ea7916
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/lidarr
+    keywords:
+    - lidarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: Lidarr
+    sources:
+    - https://github.com/Lidarr/Lidarr
+    - https://hub.docker.com/r/itscontained/lidarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/Lidarr-1.0.0/Lidarr-1.0.0.tgz
+    version: 1.0.0
+  Ombi:
+  - apiVersion: v2
+    appVersion: 4.0.471
+    created: "2020-09-05T08:07:07.086271749Z"
+    dependencies:
+    - alias: ombi
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Ombi Chart
+    digest: 6aed58612afa3b87908dbab88eb28700ce482f8dee917751c3091cb509d10ee0
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/ombi
+    keywords:
+    - ombi
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: Ombi
+    sources:
+    - https://github.com/tidusjar/Ombi
+    - https://hub.docker.com/r/itscontained/ombi
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/Ombi-1.0.0/Ombi-1.0.0.tgz
+    version: 1.0.0
+  Organizr:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-09-05T08:07:07.192990807Z"
+    dependencies:
+    - alias: organizr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Organizr Chart
+    digest: e24adc43893f71ce323d864d24912a39ce8a0aa62618be2a53ffc72cda906eb4
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/organizr
+    keywords:
+    - organizr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: Organizr
+    sources:
+    - https://github.com/causefx/Organizr
+    - https://hub.docker.com/r/itscontained/ombi
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/Organizr-1.0.0/Organizr-1.0.0.tgz
+    version: 1.0.0
+  Radarr:
+  - apiVersion: v2
+    appVersion: 3.0.0.3591
+    created: "2020-09-05T08:07:07.304412827Z"
+    dependencies:
+    - alias: radarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Radarr Chart
+    digest: d88f452f93e2f7b3b236501b48d9fbf9691329466cf93c86d42bc3f205e5779f
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/radarr
+    keywords:
+    - radarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: Radarr
+    sources:
+    - https://github.com/Radarr/Radarr
+    - https://hub.docker.com/r/itscontained/radarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/Radarr-1.0.0/Radarr-1.0.0.tgz
+    version: 1.0.0
+  Sonarr:
+  - apiVersion: v2
+    appVersion: 3.0.3.913
+    created: "2020-09-05T08:07:07.422220798Z"
+    dependencies:
+    - alias: sonarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Sonarr Chart
+    digest: 376f7560aafd4b4bec6f2d9fde7711f61c52888c416d67ee1c4d2e6136437abe
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/sonarr
+    keywords:
+    - sonarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: Sonarr
+    sources:
+    - https://github.com/Sonarr/Sonarr
+    - https://hub.docker.com/r/itscontained/sonarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/Sonarr-1.0.0/Sonarr-1.0.0.tgz
+    version: 1.0.0
   arr:
   - apiVersion: v2
     created: "2020-08-21T02:16:44.570190557-05:00"
