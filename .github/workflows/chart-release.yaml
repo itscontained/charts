@@ -61,8 +61,6 @@ jobs:
               echo "Packaging chart '$chart'..."
               helm package "$chart" --destination .cr-release-packages --dependency-update
           }
-
-          local version="$DEFAULT_CHART_RELEASER_VERSION"
           latest_tag=$(lookup_latest_tag)
           echo "Discovering changed charts since '$latest_tag'..."
           changed_charts=()
