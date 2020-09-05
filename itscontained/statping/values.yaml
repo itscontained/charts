@@ -1,8 +1,7 @@
 # Default values for statping.
 
 image:
-  organization: statping
-  repository: statping
+  repository: statping/statping
   pullPolicy: IfNotPresent
   tag: ""
 
