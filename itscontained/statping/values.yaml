@@ -36,7 +36,7 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-env: {}
+env: []
 
 service:
   type: ClusterIP
@@ -105,7 +105,7 @@ externalSecret:
   type: kubernetes-external-secrets
   kubernetesExternalSecrets:
     spec: {}
-    data: {}
+    data: []
 
 additionalVolumes: []
 
