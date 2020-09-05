@@ -52,6 +52,22 @@ entries:
     urls:
     - https://charts.itscontained.io/packages/bitwarden_rs-0.1.4.tgz
     version: 0.1.4
+  media-common:
+  - apiVersion: v2
+    created: "2020-09-05T08:02:27.530289115Z"
+    description: Common dependancy chart for media ecosystem containers
+    digest: 19d89c6b2ea37eddf7c65a489e1ddb0fa0632ce0df641b4558bf149733369689
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common
+    keywords:
+    - media-common
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: media-common
+    type: library
+    urls:
+    - https://github.com/itscontained/charts/releases/download/media-common-1.0.0/media-common-1.0.0.tgz
+    version: 1.0.0
   secret-manager:
   - apiVersion: v2
     appVersion: 0.1.0
