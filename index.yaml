@@ -193,6 +193,31 @@ entries:
     urls:
     - https://github.com/itscontained/charts/releases/download/sonarr-1.0.0/sonarr-1.0.0.tgz
     version: 1.0.0
+  tautulli:
+  - apiVersion: v2
+    appVersion: v2.5.4
+    created: "2020-09-05T08:37:48.349328395Z"
+    dependencies:
+    - alias: tautulli
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Tautulli Chart
+    digest: 5d8b0e86a1f86f3361e98db0cddf342a64b8b591b0c94989e1ecb7f2f95fbbb6
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/tautulli
+    keywords:
+    - tautulli
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: tautulli
+    sources:
+    - https://github.com/Tautulli/Tautulli
+    - https://hub.docker.com/r/tautulli/tautulli
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/tautulli-1.0.0/tautulli-1.0.0.tgz
+    version: 1.0.0
   traefik-forward-auth:
   - apiVersion: v2
     appVersion: 2.2.0
