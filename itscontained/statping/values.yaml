@@ -40,7 +40,7 @@ env: []
 
 service:
   type: ClusterIP
-  port: ""
+  port: 8080
   ## Specify the nodePort value for the LoadBalancer and NodePort service types.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
   ##
@@ -148,7 +148,7 @@ resources: {}
   #  memory: 128Mi
   # requests:
   #  cpu: 100m
-#  memory: 128Mi
+  #  memory: 128Mi
 
 nodeSelector: {}
 
