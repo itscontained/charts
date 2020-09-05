@@ -1,4 +1,4 @@
-# Default values for media-common.
+# Default values for media-common
 
 image:
   organization: ""
