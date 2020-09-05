@@ -415,6 +415,28 @@ entries:
     urls:
     - https://github.com/itscontained/charts/releases/download/sonarr-1.0.0/sonarr-1.0.0.tgz
     version: 1.0.0
+  statping:
+  - apiVersion: v2
+    appVersion: v0.90.65
+    created: "2020-09-05T20:08:59.761726226Z"
+    description: Status page for monitoring your websites and applications
+    digest: 6c5237e67896e723d31140daa7d4e535b6c14c74cf3342bbbf9aec9196055b5d
+    home: https://charts.itscontained.io
+    icon: https://github.com/statping/statping/blob/dev/frontend/src/assets/logo.png?raw=true
+    keywords:
+    - statping
+    - status
+    - status-page
+    maintainers:
+    - email: nick@cajun.pro
+      name: Nicholas St. Germain
+    name: statping
+    sources:
+    - https://github.com/statping/statping
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/statping-0.1.0/statping-0.1.0.tgz
+    version: 0.1.0
   tautulli:
   - apiVersion: v2
     appVersion: v2.5.4
