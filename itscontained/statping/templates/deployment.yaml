@@ -51,7 +51,7 @@ spec:
                 secretKeyRef:
                   {{- if .Values.statping.admin.existingSecret.enabled }}
                   name: {{ .Values.statping.admin.existingSecret.name | quote }}
-                  key: {{ .Values.statping.admin.existingSecret.userKey | quote }}
+                  key: {{ .Values.statping.admin.existingSecret.userKey | default "admin-user" }}
                   {{- else }}
                   name: {{ include "statping.fullname" . }}
                   key: admin-user
@@ -61,7 +61,7 @@ spec:
                 secretKeyRef:
                   {{- if .Values.statping.admin.existingSecret.enabled }}
                   name: {{ .Values.statping.admin.existingSecret.name | quote }}
-                  key: {{ .Values.statping.admin.existingSecret.passwordKey | quote }}
+                  key: {{ .Values.statping.admin.existingSecret.passwordKey | default "admin-password" }}
                   {{- else }}
                   name: {{ include "statping.fullname" . }}
                   key: admin-password
@@ -71,7 +71,7 @@ spec:
                 secretKeyRef:
                   {{- if .Values.statping.admin.existingSecret.enabled }}
                   name: {{ .Values.statping.admin.existingSecret.name | quote }}
-                  key: {{ .Values.statping.admin.existingSecret.emailKey | quote }}
+                  key: {{ .Values.statping.admin.existingSecret.emailKey | default "admin-email" }}
                   {{- else }}
                   name: {{ include "statping.fullname" . }}
                   key: admin-email
