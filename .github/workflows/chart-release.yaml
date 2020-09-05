@@ -21,10 +21,12 @@ jobs:
           ./get_helm.sh
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.0.0
+        with:
+          charts_dir: "itscontained"
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_CHARTS_REPO: "https://charts.itscontained.io"
-          CR_INDEX_PATH: "charts/index.yaml"
+          CR_INDEX_PATH: "index.yaml"
           CR_OWNER: "itscontained"
           CR_GIT_REPO: "charts"
-          CR_PACKAGE_PATH: "charts/packages/"
+          CR_PACKAGE_PATH: "packages/"
