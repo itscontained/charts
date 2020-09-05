@@ -2,7 +2,7 @@ apiVersion: v2
 name: radarr
 description: Radarr Chart
 type: application
-version: 1.0.0
+version: 1.0.1
 appVersion: 3.0.0.3591
 keywords:
   - radarr

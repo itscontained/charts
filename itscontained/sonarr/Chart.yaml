@@ -2,7 +2,7 @@ apiVersion: v2
 name: sonarr
 description: Sonarr Chart
 type: application
-version: 1.0.0
+version: 1.0.1
 appVersion: 3.0.3.913
 keywords:
   - sonarr
