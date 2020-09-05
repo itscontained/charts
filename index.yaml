@@ -418,6 +418,27 @@ entries:
   statping:
   - apiVersion: v2
     appVersion: v0.90.65
+    created: "2020-09-05T20:34:30.6340421Z"
+    description: Status page for monitoring your websites and applications
+    digest: 673bdb6a128c61eddc33c831f726db53557a2308c7da3f9a530657df2c2708eb
+    home: https://charts.itscontained.io
+    icon: https://github.com/statping/statping/blob/dev/frontend/src/assets/logo.png?raw=true
+    keywords:
+    - statping
+    - status
+    - status-page
+    maintainers:
+    - email: nick@cajun.pro
+      name: Nicholas St. Germain
+    name: statping
+    sources:
+    - https://github.com/statping/statping
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/statping-0.1.3/statping-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: v0.90.65
     created: "2020-09-05T20:24:33.990663526Z"
     description: Status page for monitoring your websites and applications
     digest: 49d22ab7e4b9f61c5e6173ba98d13d5f3919830237f79bee62d1de4a2dc99c71
