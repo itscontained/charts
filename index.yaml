@@ -136,6 +136,30 @@ entries:
   organizr:
   - apiVersion: v2
     appVersion: latest
+    created: "2020-09-05T09:33:01.867213083Z"
+    dependencies:
+    - alias: organizr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.1
+    description: Organizr Chart
+    digest: 72aefc921066de21361a4d2fcd84f015829979091b3951789b8758b85db266cf
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/organizr
+    keywords:
+    - organizr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: organizr
+    sources:
+    - https://github.com/causefx/Organizr
+    - https://hub.docker.com/r/itscontained/ombi
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/organizr-1.0.1/organizr-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2020-09-05T08:29:28.939468651Z"
     dependencies:
     - alias: organizr
@@ -159,6 +183,30 @@ entries:
     - https://github.com/itscontained/charts/releases/download/organizr-1.0.0/organizr-1.0.0.tgz
     version: 1.0.0
   radarr:
+  - apiVersion: v2
+    appVersion: 3.0.0.3591
+    created: "2020-09-05T09:33:02.029030334Z"
+    dependencies:
+    - alias: radarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.1
+    description: Radarr Chart
+    digest: 8c315a5ed70e36335f5ec5bf2fe576791eccfc68679305cb63272028de6a9c12
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/radarr
+    keywords:
+    - radarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: radarr
+    sources:
+    - https://github.com/Radarr/Radarr
+    - https://hub.docker.com/r/itscontained/radarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/radarr-1.0.1/radarr-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 3.0.0.3591
     created: "2020-09-05T08:29:29.059999823Z"
@@ -186,6 +234,30 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 3.0.3.913
+    created: "2020-09-05T09:33:02.171429367Z"
+    dependencies:
+    - alias: sonarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.1
+    description: Sonarr Chart
+    digest: ccd9eb73325e9bae29d96b57befb615f046744f4796ea342259999decc1a057a
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/sonarr
+    keywords:
+    - sonarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: sonarr
+    sources:
+    - https://github.com/Sonarr/Sonarr
+    - https://hub.docker.com/r/itscontained/sonarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/sonarr-1.0.1/sonarr-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 3.0.3.913
     created: "2020-09-05T08:29:29.194550339Z"
     dependencies:
     - alias: sonarr
@@ -209,6 +281,30 @@ entries:
     - https://github.com/itscontained/charts/releases/download/sonarr-1.0.0/sonarr-1.0.0.tgz
     version: 1.0.0
   tautulli:
+  - apiVersion: v2
+    appVersion: v2.5.4
+    created: "2020-09-05T09:33:02.34486213Z"
+    dependencies:
+    - alias: tautulli
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.1
+    description: Tautulli Chart
+    digest: fa53d9a88cfc0d65b6debe5b4725967d3fe845ee0b49df6d1f04573e9819cd05
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/tautulli
+    keywords:
+    - tautulli
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: tautulli
+    sources:
+    - https://github.com/Tautulli/Tautulli
+    - https://hub.docker.com/r/tautulli/tautulli
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/tautulli-1.0.1/tautulli-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: v2.5.4
     created: "2020-09-05T08:37:48.349328395Z"
