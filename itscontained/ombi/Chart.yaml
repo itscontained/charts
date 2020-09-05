@@ -2,7 +2,7 @@ apiVersion: v2
 name: ombi
 description: Ombi Chart
 type: application
-version: 1.0.0
+version: 1.0.2
 appVersion: 4.0.471
 keywords:
   - ombi
@@ -16,5 +16,5 @@ maintainers:
 dependencies:
   - name: media-common
     repository: https://charts.itscontained.io
-    version: 1.0.0
+    version: 1.0.2
     alias: ombi

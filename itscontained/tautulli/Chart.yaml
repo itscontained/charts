@@ -2,7 +2,7 @@ apiVersion: v2
 name: tautulli
 description: Tautulli Chart
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: v2.5.4
 keywords:
   - tautulli
@@ -16,5 +16,5 @@ maintainers:
 dependencies:
   - name: media-common
     repository: https://charts.itscontained.io
-    version: 1.0.1
+    version: 1.0.2
     alias: tautulli

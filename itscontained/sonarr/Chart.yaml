@@ -2,7 +2,7 @@ apiVersion: v2
 name: sonarr
 description: Sonarr Chart
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: 3.0.3.913
 keywords:
   - sonarr
@@ -16,5 +16,5 @@ maintainers:
 dependencies:
   - name: media-common
     repository: https://charts.itscontained.io
-    version: 1.0.1
+    version: 1.0.2
     alias: sonarr

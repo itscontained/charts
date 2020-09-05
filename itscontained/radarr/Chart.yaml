@@ -2,7 +2,7 @@ apiVersion: v2
 name: radarr
 description: Radarr Chart
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: 3.0.0.3591
 keywords:
   - radarr
@@ -16,5 +16,5 @@ maintainers:
 dependencies:
   - name: media-common
     repository: https://charts.itscontained.io
-    version: 1.0.1
+    version: 1.0.2
     alias: radarr
