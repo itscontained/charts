@@ -1,4 +1,4 @@
-{{- if eq .Values.postgres.type "kubedb" }}
+{{- if and .Values.postgres.enabled (eq .Values.postgres.type "kubedb") }}
 apiVersion: kubedb.com/v1alpha1
 kind: Postgres
 metadata:

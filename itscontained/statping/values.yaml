@@ -89,9 +89,10 @@ persistence:
   skipuninstall: false
 
 postgres:
+  enabled: true
   type: kubedb
   kubedb:
-    version: "11.1"
+    version: 11.1
     storageType: Durable
     storage:
       accessModes:
