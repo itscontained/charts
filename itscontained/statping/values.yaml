@@ -100,6 +100,13 @@ postgres:
         requests:
           storage: 1Gi
 
+externalSecret:
+  enabled: false
+  type: kubernetes-external-secrets
+  kubernetesExternalSecrets:
+    spec: {}
+    data: {}
+
 additionalVolumes: []
 
 additionalVolumeMounts: []
