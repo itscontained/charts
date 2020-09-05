@@ -1,8 +1,8 @@
 apiVersion: v2
 name: media-common
 description: Common dependancy chart for media ecosystem containers
-type: library
-version: 1.0.0
+type: application
+version: 1.0.1
 keywords:
   - media-common
 home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common
