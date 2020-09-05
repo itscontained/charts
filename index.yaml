@@ -52,6 +52,31 @@ entries:
     urls:
     - https://github.com/itscontained/charts/releases/download/bitwarden_rs-0.1.4/bitwarden_rs-0.1.4.tgz
     version: 0.1.4
+  lidarr:
+  - apiVersion: v2
+    appVersion: 0.7.1.1785
+    created: "2020-09-05T08:29:28.634539392Z"
+    dependencies:
+    - alias: lidarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Lidarr Chart
+    digest: 7236e9749c54fa4102b44baaf90f0a9033dff5f954b328ee3cf527144087d841
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/lidarr
+    keywords:
+    - lidarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: lidarr
+    sources:
+    - https://github.com/Lidarr/Lidarr
+    - https://hub.docker.com/r/itscontained/lidarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/lidarr-1.0.0/lidarr-1.0.0.tgz
+    version: 1.0.0
   media-common:
   - apiVersion: v2
     created: "2020-09-05T08:28:11.495532239Z"
@@ -67,6 +92,106 @@ entries:
     type: library
     urls:
     - https://github.com/itscontained/charts/releases/download/media-common-1.0.0/media-common-1.0.0.tgz
+    version: 1.0.0
+  ombi:
+  - apiVersion: v2
+    appVersion: 4.0.471
+    created: "2020-09-05T08:29:28.756119764Z"
+    dependencies:
+    - alias: ombi
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Ombi Chart
+    digest: 0fcf802c266080fab39df3e125aa2fd4849768bcdb2053a9783374f5296061fa
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/ombi
+    keywords:
+    - ombi
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: ombi
+    sources:
+    - https://github.com/tidusjar/Ombi
+    - https://hub.docker.com/r/itscontained/ombi
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/ombi-1.0.0/ombi-1.0.0.tgz
+    version: 1.0.0
+  organizr:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-09-05T08:29:28.939468651Z"
+    dependencies:
+    - alias: organizr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Organizr Chart
+    digest: 3c45c4b06288c6d312050036aabc0b38e10493970da6cbff08708bae2b2399cc
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/organizr
+    keywords:
+    - organizr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: organizr
+    sources:
+    - https://github.com/causefx/Organizr
+    - https://hub.docker.com/r/itscontained/ombi
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/organizr-1.0.0/organizr-1.0.0.tgz
+    version: 1.0.0
+  radarr:
+  - apiVersion: v2
+    appVersion: 3.0.0.3591
+    created: "2020-09-05T08:29:29.059999823Z"
+    dependencies:
+    - alias: radarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Radarr Chart
+    digest: ce790ee8a62705598ff4cb7c58648d56d2bbb7d406341eaf227e14ff75245354
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/radarr
+    keywords:
+    - radarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: radarr
+    sources:
+    - https://github.com/Radarr/Radarr
+    - https://hub.docker.com/r/itscontained/radarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/radarr-1.0.0/radarr-1.0.0.tgz
+    version: 1.0.0
+  sonarr:
+  - apiVersion: v2
+    appVersion: 3.0.3.913
+    created: "2020-09-05T08:29:29.194550339Z"
+    dependencies:
+    - alias: sonarr
+      name: media-common
+      repository: https://charts.itscontained.io
+      version: 1.0.0
+    description: Sonarr Chart
+    digest: 087240999d728a91a65f6e2cf5c611769fb77bf4f3cd9418f3eb86bc6a1ae97e
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/media-common/sonarr
+    keywords:
+    - sonarr
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: sonarr
+    sources:
+    - https://github.com/Sonarr/Sonarr
+    - https://hub.docker.com/r/itscontained/sonarr
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/sonarr-1.0.0/sonarr-1.0.0.tgz
     version: 1.0.0
   traefik-forward-auth:
   - apiVersion: v2
