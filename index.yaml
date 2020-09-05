@@ -52,6 +52,17 @@ entries:
     urls:
     - https://charts.itscontained.io/packages/bitwarden_rs-0.1.4.tgz
     version: 0.1.4
+  secret-manager:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-08-24T07:45:39.569069809Z"
+    description: External secret management for Kubernetes.
+    digest: 18848cb89bee8a2489401a5446c3a2bcabb76fbba0cc02a36213c012ff6e13ce
+    name: secret-manager
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/secret-manager-0.1.0/secret-manager-0.1.0.tgz
+    version: 0.1.0
   traefik:
   - apiVersion: v1
     appVersion: 2.2.5
