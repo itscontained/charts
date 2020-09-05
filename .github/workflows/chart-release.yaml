@@ -40,6 +40,7 @@ jobs:
           }
           filter_charts() {
               while read chart; do
+                  echo $chart
                   [[ ! -d "$chart" ]] && continue
                   local file="$chart/Chart.yaml"
                   if [[ -f "$file" ]]; then
@@ -52,7 +53,8 @@ jobs:
           lookup_changed_charts() {
               local commit="$1"
               local changed_files
-              changed_files=$(git diff --find-renames --name-only "$commit" -- "itscontained/")
+              local changed_files=$(git diff --find-renames --name-only "$commit" -- "itscontained/")
+              echo "Changed files: $changed_files"
               cut -d '/' -f '1,2' <<< "$changed_files" | uniq | filter_charts
           }
           package_chart() {
@@ -64,6 +66,7 @@ jobs:
           echo "Discovering changed charts since '$latest_tag'..."
           changed_charts=()
           readarray -t changed_charts <<< "$(lookup_changed_charts "$latest_tag")"
+          echo "changed charts: ${changed_charts[*]}"
           if [[ -n "${changed_charts[*]}" ]]; then
               rm -rf .cr-release-packages
               mkdir -p .cr-release-packages

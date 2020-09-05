@@ -1,6 +1,6 @@
 apiVersion: v2
 name: media-common
-description: Common dependancy chart for media ecosystem containers
+description: Common dependancy chart for media containers
 type: library
 version: 1.0.0
 keywords:
