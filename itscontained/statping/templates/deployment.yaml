@@ -82,7 +82,7 @@ spec:
             - name: DB_HOST
               value: postgres-{{ template "statping.fullname" . }}
             - name: DB_DATABASE
-              value: statup
+              value: postgres
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
