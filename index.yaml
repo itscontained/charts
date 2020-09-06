@@ -418,6 +418,27 @@ entries:
   statping:
   - apiVersion: v2
     appVersion: v0.90.65
+    created: "2020-09-06T23:31:06.655754475Z"
+    description: Status page for monitoring your websites and applications
+    digest: b714ff9fe9d9724b848620c6f3a10590e96be2f3809a9a6702667794df68506a
+    home: https://github.com/itscontained/charts
+    icon: https://github.com/statping/statping/blob/dev/frontend/src/assets/logo.png?raw=true
+    keywords:
+    - statping
+    - status
+    - status-page
+    maintainers:
+    - email: nick@cajun.pro
+      name: Nicholas St. Germain
+    name: statping
+    sources:
+    - https://github.com/statping/statping
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/statping-0.1.9/statping-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: v0.90.65
     created: "2020-09-05T21:19:40.136613026Z"
     description: Status page for monitoring your websites and applications
     digest: cb26553e858774c8b0c29cc48061e22f936e84533f0b3db74480870cf56bd4e6
@@ -679,6 +700,29 @@ entries:
     - https://github.com/itscontained/charts/releases/download/tautulli-1.0.0/tautulli-1.0.0.tgz
     version: 1.0.0
   traefik-forward-auth:
+  - apiVersion: v2
+    appVersion: 2.2.0
+    created: "2020-09-06T23:31:06.751678327Z"
+    description: A minimal forward authentication service that provides OAuth/SSO
+      login and authentication for the traefik reverse proxy/load balancer
+    digest: 551bd1f7bc59fb9ddc7e0ac0d410f98c597d0553457d1d8236a1e6f4a1c8d6db
+    home: https://charts.itscontained.io
+    keywords:
+    - traefik
+    - traefik-forward-auth
+    - oauth
+    - oauth2
+    - oidc
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: traefik-forward-auth
+    sources:
+    - https://github.com/thomseddon/traefik-forward-auth
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/traefik-forward-auth-1.0.2/traefik-forward-auth-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 2.2.0
     created: "2020-09-05T08:28:11.610995184Z"
