@@ -8,7 +8,7 @@ keywords:
   - statping
   - status
   - status-page
-home: https://charts.itscontained.io
+home: https://github.com/itscontained/charts
 sources:
   - https://github.com/statping/statping
 maintainers:

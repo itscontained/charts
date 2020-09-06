@@ -10,7 +10,7 @@ keywords:
   - oauth
   - oauth2
   - oidc
-home: https://github.com/billimek/billimek-charts/tree/master/charts/traefik-forward-auth
+home: https://charts.itscontained.io
 sources:
   - https://github.com/thomseddon/traefik-forward-auth
 maintainers:
