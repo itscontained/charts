@@ -1,0 +1,19 @@
+name: Refresh Github Pages
+
+on:
+  push:
+    branches: gh-pages
+  schedule:
+    - cron: '0 3 * * *' # Runs every day at 3am
+  workflow_dispatch:
+jobs:
+  re:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl --fail --request POST \
+                      --url "https://api.github.com/repos/${{ github.repository }}/pages/builds" \
+                      --header "Authorization: Bearer $TOKEN"
