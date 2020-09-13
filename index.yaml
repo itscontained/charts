@@ -23,6 +23,37 @@ entries:
     urls:
     - https://github.com/itscontained/charts/releases/download/bitwarden_rs-0.1.4/bitwarden_rs-0.1.4.tgz
     version: 0.1.4
+  secret-manager:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-09-13T03:16:52.113036094Z"
+    description: External secret management for Kubernetes
+    digest: a915ba367acf13ec457b88d81d77ea2a1b03c568b389666b588af265a817e8bb
+    home: https://github.com/itscontained/secret-manager
+    keywords:
+    - kubernetes
+    - secret
+    - secretstore
+    - secret-management
+    - vault
+    - aws
+    - azure
+    - crd
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    - email: kellinmcavoy@gmail.com
+      name: mcavoyk
+    name: secret-manager
+    sources:
+    - https://github.com/itscontained/secret-manager
+    - https://hub.docker.com/r/itscontained/secret-manager
+    - https://quay.io/repository/itscontained/secret-manager
+    - https://github.com/orgs/itscontained/packages/container/secret-manager
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/secret-manager-0.1.0/secret-manager-0.1.0.tgz
+    version: 0.1.0
   statping:
   - apiVersion: v2
     appVersion: v0.90.65
