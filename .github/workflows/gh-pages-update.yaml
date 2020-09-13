@@ -14,6 +14,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.GHCR_PASSWORD }}
         run: |
-          curl --fail --request POST \
-                      --url "https://api.github.com/repos/${{ github.repository }}/pages/builds" \
-                      --header "Authorization: Bearer $TOKEN"
+          curl --fail \
+               --request POST \
+               --url "https://api.github.com/repos/${{ github.repository }}/pages/builds" \
+               --header "Authorization: Bearer $TOKEN"
