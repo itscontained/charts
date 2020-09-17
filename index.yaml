@@ -24,6 +24,50 @@ entries:
     - https://github.com/itscontained/charts/releases/download/bitwarden_rs-0.1.4/bitwarden_rs-0.1.4.tgz
     version: 0.1.4
   secret-manager:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Source Code
+          url: https://github.com/itscontained/secret-manager
+        - name: DockerHub Image
+          url: https://hub.docker.com/r/itscontained/secret-manager
+        - name: Quay.io Image
+          url: https://quay.io/repository/itscontained/secret-manager
+        - name: GHCR Image
+          url: https://github.com/orgs/itscontained/packages/container/secret-manager
+      artifacthub.io/maintainers: |-
+        - name: Nicholas St. Germain
+          email: nick@cajun.pro
+        - name: Kellin McAvoy
+          email: kellinmcavoy@gmail.com
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    created: "2020-09-17T18:15:27.288764594Z"
+    description: External secret management for Kubernetes
+    digest: 72dc2ead22ba50b9f322d5ca343529cf8057bd795e005ad1178ff5747191dcb9
+    home: https://github.com/itscontained/secret-manager
+    keywords:
+    - kubernetes
+    - secret
+    - secretstore
+    - secret-management
+    - vault
+    - aws
+    - azure
+    - crd
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    - email: kellinmcavoy@gmail.com
+      name: mcavoyk
+    name: secret-manager
+    sources:
+    - https://hub.docker.com/r/itscontained/secret-manager
+    - https://quay.io/repository/itscontained/secret-manager
+    - https://github.com/orgs/itscontained/packages/container/secret-manager
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/secret-manager-0.1.1/secret-manager-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
     created: "2020-09-13T03:16:52.113036094Z"
