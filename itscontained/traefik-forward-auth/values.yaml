@@ -111,6 +111,18 @@ service:
   labels: {}
   additionalSpec: {}
 
+livenessProbe:
+  enabled: true
+  tcpSocket:
+    port: http
+  periodSeconds: 20
+
+readinessProbe:
+  enabled: true
+  tcpSocket:
+    port: http
+  periodSeconds: 10
+
 ingress:
   enabled: false
   annotations: {}
