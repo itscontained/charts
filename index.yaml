@@ -352,6 +352,31 @@ entries:
     urls:
     - https://github.com/itscontained/charts/releases/download/statping-0.1.0/statping-0.1.0.tgz
     version: 0.1.0
+  traefik:
+  - apiVersion: v2
+    appVersion: 2.3.1
+    created: "2020-10-13T04:44:28.671437784Z"
+    description: A Traefik based Kubernetes ingress controller
+    digest: bd88260aa751f53b396fdd3e88dd514990af12133fc6e48ea67ccbfc87cb4677
+    home: https://traefik.io/
+    icon: https://raw.githubusercontent.com/traefik/traefik/v2.3/docs/content/assets/img/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    maintainers:
+    - email: emile@vauge.com
+      name: emilevauge
+    - email: daniel.tomcej@gmail.com
+      name: dtomcej
+    - email: ldez@traefik.io
+      name: ldez
+    name: traefik
+    sources:
+    - https://github.com/traefik/traefik
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/traefik-9.5.1/traefik-9.5.1.tgz
+    version: 9.5.1
   traefik-forward-auth:
   - apiVersion: v2
     appVersion: 2.2.0
