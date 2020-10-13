@@ -1,0 +1,49 @@
+suite: Traefik configuration
+templates:
+  - deployment.yaml
+tests:
+  - it: should have no custom arguments when specified by default
+    set:
+      additionalArguments:
+        - --the.force.is.with.me=true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--the.force.is.with.me=true"
+  - it: should have namespace restriction if rbac is namespaced
+    set:
+      rbac:
+        namespaced: true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.namespaces=NAMESPACE"
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetescrd.namespaces=NAMESPACE"
+  - it: should have disable published Kubernetes service when default configuration
+    asserts:
+      - notContains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.ingressendpoint.publishedservice=NAMESPACE/RELEASE-NAME-traefik"
+  - it: should have enable published Kubernetes service when specified in configuration
+    set:
+        providers:
+          kubernetesIngress:
+            publishedService:
+              enabled: true
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.ingressendpoint.publishedservice=NAMESPACE/RELEASE-NAME-traefik"
+  - it: should have a custom string in published Kubernetes service when specified in configuration
+    set:
+      providers:
+        kubernetesIngress:
+          publishedService:
+            enabled: true
+            pathOverride: foo/bar
+    asserts:
+      - contains:
+          path: spec.template.spec.containers[0].args
+          content: "--providers.kubernetesingress.ingressendpoint.publishedservice=foo/bar"
