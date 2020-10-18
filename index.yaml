@@ -25,6 +25,119 @@ entries:
     version: 0.1.4
   secret-manager:
   - annotations:
+      artifacthub.io/crds: |
+        - kind: SecretStore
+          version: v1alpha1
+          name: secretstores.secret-manager.itscontained.io
+          displayName: SecretStore
+          description: A SecretStore represents a secure external location for storing secrets, which can be referenced as part of `storeRef` fields (namespaced)
+        - kind: ClusterSecretStore
+          version: v1alpha1
+          name: clustersecretstores.secret-manager.itscontained.io
+          displayName: ClusterSecretStore
+          description: A ClusterSecretStore represents a secure external location for storing secrets, which can be referenced as part of `storeRef` fields
+        - kind: ExternalSecret
+          version: v1alpha1
+          name: externalsecrets.secret-manager.itscontained.io
+          displayName: ExternalSecret
+          description: An ExternalSecret resource can be created which will ensure a Secret is available with the referenced contents of the external store
+      artifacthub.io/crdsExamples: |
+        - apiVersion: secret-manager.itscontained.io/v1alpha1
+          kind: SecretStore
+          metadata:
+            name: vault
+            namespace: example-ns
+          spec:
+            vault:
+              server: "https://vault.example.com"
+              path: secret
+              auth:
+                kubernetes:
+                  mountPath: kubernetes
+                  role: example-role
+                  secretRef:
+                    name: vault-secret
+        - apiVersion: secret-manager.itscontained.io/v1alpha1
+          kind: ClusterSecretStore
+          metadata:
+            name: vault
+          spec:
+            vault:
+              server: "https://vault.example.com"
+              path: secret
+              auth:
+                kubernetes:
+                  mountPath: kubernetes
+                  role: example-role
+                  secretRef:
+                    name: vault-secret
+        - apiVersion: secret-manager.itscontained.io/v1alpha1
+          kind: ExternalSecret
+          metadata:
+            name: hello-service
+            namespace: example-ns
+          spec:
+            storeRef:
+              name: vault
+            data:
+            - secretKey: password
+              remoteRef:
+                name: teamA/hello-service
+                property: serviceBapiKey
+      artifacthub.io/images: |
+        - name: dockerhub
+          image: "itscontained/secret-manager:0.3.0"
+          url: "https://hub.docker.com/r/itscontained/secret-manager"
+        - name: quay.io
+          image: "quay.io/itscontained/secret-manager:0.3.0"
+          url: "https://quay.io/repository/itscontained/secret-manager"
+        - name: GHCR
+          image: "ghcr.io/itscontained/secret-manager:0.3.0"
+          url: "https://github.com/orgs/itscontained/packages/container/package/secret-manager"
+      artifacthub.io/links: |
+        - name: DockerHub Image
+          url: https://hub.docker.com/r/itscontained/secret-manager
+        - name: Quay.io Image
+          url: https://quay.io/repository/itscontained/secret-manager
+        - name: GHCR Image
+          url: https://github.com/orgs/itscontained/packages/container/secret-manager
+      artifacthub.io/maintainers: |
+        - name: Nicholas St. Germain
+          email: nick@cajun.pro
+        - name: Kellin McAvoy
+          email: kellinmcavoy@gmail.com
+      artifacthub.io/operator: "true"
+      artifacthub.io/operatorCapabilities: Basic Install
+    apiVersion: v2
+    appVersion: 0.3.0
+    created: "2020-10-18T19:53:21.385339639Z"
+    description: External secret management for Kubernetes
+    digest: e40bdf3c570a7906b87e8159ace983c9a9539277a0247667bcb027144662df31
+    home: https://github.com/itscontained/secret-manager
+    keywords:
+    - kubernetes
+    - secret
+    - secretstore
+    - secret-management
+    - vault
+    - aws
+    - azure
+    - crd
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    - email: kellinmcavoy@gmail.com
+      name: mcavoyk
+    name: secret-manager
+    sources:
+    - https://hub.docker.com/r/itscontained/secret-manager
+    - https://quay.io/repository/itscontained/secret-manager
+    - https://github.com/orgs/itscontained/packages/container/secret-manager
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/secret-manager-0.2.1/secret-manager-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
       artifacthub.io/images: |
         - name: Dockerhub
           image: "itscontained/secret-manager:0.3.0"
