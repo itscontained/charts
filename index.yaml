@@ -25,6 +25,57 @@ entries:
     version: 0.1.4
   secret-manager:
   - annotations:
+      artifacthub.io/images: |
+        - name: Dockerhub
+          image: "itscontained/secret-manager:0.3.0"
+        - name: Quay.io
+          image: "quay.io/itscontained/secret-manager:0.3.0"
+        - name: GHCR
+          image: "ghcr.io/itscontained/secret-manager:0.3.0"
+      artifacthub.io/links: |
+        - name: DockerHub Image
+          url: https://hub.docker.com/r/itscontained/secret-manager
+        - name: Quay.io Image
+          url: https://quay.io/repository/itscontained/secret-manager
+        - name: GHCR Image
+          url: https://github.com/orgs/itscontained/packages/container/secret-manager
+      artifacthub.io/maintainers: |
+        - name: Nicholas St. Germain
+          email: nick@cajun.pro
+        - name: Kellin McAvoy
+          email: kellinmcavoy@gmail.com
+      artifacthub.io/operator: "true"
+      artifacthub.io/operatorCapabilities: Basic Install
+    apiVersion: v2
+    appVersion: 0.3.0
+    created: "2020-10-18T17:37:24.575704628Z"
+    description: External secret management for Kubernetes
+    digest: 5ba8bbf9cad1078e704df2153ed44a17671a1d46cc10fc2c979e5ee57b4d567c
+    home: https://github.com/itscontained/secret-manager
+    keywords:
+    - kubernetes
+    - secret
+    - secretstore
+    - secret-management
+    - vault
+    - aws
+    - azure
+    - crd
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    - email: kellinmcavoy@gmail.com
+      name: mcavoyk
+    name: secret-manager
+    sources:
+    - https://hub.docker.com/r/itscontained/secret-manager
+    - https://quay.io/repository/itscontained/secret-manager
+    - https://github.com/orgs/itscontained/packages/container/secret-manager
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/secret-manager-0.2.0/secret-manager-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
       artifacthub.io/links: |
         - name: DockerHub Image
           url: https://hub.docker.com/r/itscontained/secret-manager
