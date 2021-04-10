@@ -23,6 +23,32 @@ entries:
     urls:
     - https://github.com/itscontained/charts/releases/download/bitwarden_rs-0.1.4/bitwarden_rs-0.1.4.tgz
     version: 0.1.4
+  jetbrains-projector:
+  - apiVersion: v2
+    created: "2021-04-10T11:19:44.950255461Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 2.2.0
+    description: Projector is a technology to run and access Swing GUI applications
+      remotely
+    digest: e686586158ef5b57c7f52f67f59ce299b7a9f9cd409e050d3ba78d1fc2eebc40
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/jetbrains-projector
+    icon: https://pbs.twimg.com/profile_images/1369990348580216834/dorDbokA_400x400.png
+    keywords:
+    - jetbrains
+    - projector
+    - jetbrains-projector
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: jetbrains-projector
+    sources:
+    - https://github.com/JetBrains/projector-docker
+    urls:
+    - https://github.com/itscontained/charts/releases/download/jetbrains-projector-1.0.0/jetbrains-projector-1.0.0.tgz
+    version: 1.0.0
   secret-manager:
   - annotations:
       artifacthub.io/crds: |
