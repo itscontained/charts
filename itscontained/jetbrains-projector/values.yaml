@@ -1,0 +1,48 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+image:
+  # -- See list of available images [here](https://github.com/JetBrains/projector-docker)
+  registry: registry.jetbrains.team/p/prj/containers
+  repository: projector-pycharm-c
+  pullPolicy: IfNotPresent
+  tag: latest
+
+strategy:
+  type: Recreate
+
+# See more environment variables in the projector-docker documentation
+# https://github.com/JetBrains/projector-docker
+env: { }
+  # ORG_JETBRAINS_PROJECTOR_SERVER_HANDSHAKE_TOKEN: "admin-password"
+# ORG_JETBRAINS_PROJECTOR_SERVER_RO_HANDSHAKE_TOKEN: "read-only-password"
+
+# All default config paths will be .Values.persistence.data.mountPath + property
+# example: idea.system.path=/data/system
+idea:
+  config:
+    path: "/data/config"
+  system:
+    path: "/data/system"
+  plugins:
+    path: "/data/plugins"
+  log:
+    path: "/data/plugins"
+
+service:
+  port:
+    port: 8887
+
+ingress:
+  enabled: false
+
+persistence:
+  data:
+    enabled: false
+    emptyDir:
+      enabled: false
+    mountPath: /data
