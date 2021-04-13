@@ -7,31 +7,43 @@
 
 image:
   # -- See list of available images [here](https://github.com/JetBrains/projector-docker)
-  registry: registry.jetbrains.team/p/prj/containers
+  registry: ghcr.io/k8s-at-home
   repository: projector-pycharm-c
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: 2021.1
 
 strategy:
   type: Recreate
 
 # See more environment variables in the projector-docker documentation
 # https://github.com/JetBrains/projector-docker
-env: { }
+env: {}
   # ORG_JETBRAINS_PROJECTOR_SERVER_HANDSHAKE_TOKEN: "admin-password"
-# ORG_JETBRAINS_PROJECTOR_SERVER_RO_HANDSHAKE_TOKEN: "read-only-password"
+  # ORG_JETBRAINS_PROJECTOR_SERVER_RO_HANDSHAKE_TOKEN: "read-only-password"
 
-# All default config paths will be .Values.persistence.data.mountPath + property
-# example: idea.system.path=/data/system
-idea:
-  config:
-    path: "/data/config"
-  system:
-    path: "/data/system"
-  plugins:
-    path: "/data/plugins"
-  log:
-    path: "/data/plugins"
+# All default config paths will be /config/*
+# example: idea.system.path=/config/system
+idea: {}
+#  config:
+#    path: "/data/config"
+#  system:
+#    path: "/data/system"
+#  plugins:
+#    path: "/data/plugins"
+#  log:
+#    path: "/data/log"
+
+sslGen:
+  enabled: false
+  certs:
+    secret: "domain-com-certs"
+    crt: "tls.crt"
+    key: "tls.key"
+  jks:
+    dest: "/tmp/cert.jks"
+  properties:
+    existingSecret: ""
+    key: "ssl.properties"
 
 service:
   port:
@@ -41,8 +53,8 @@ ingress:
   enabled: false
 
 persistence:
-  data:
+  config:
     enabled: false
     emptyDir:
       enabled: false
-    mountPath: /data
+    mountPath: /config

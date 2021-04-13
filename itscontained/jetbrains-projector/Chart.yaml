@@ -1,7 +1,7 @@
 apiVersion: v2
 description: Projector is a technology to run and access Swing GUI applications remotely
 name: jetbrains-projector
-version: 1.0.0
+version: 1.0.0-RC2
 kubeVersion: ">=1.16.0-0"
 keywords:
   - jetbrains
@@ -15,6 +15,6 @@ maintainers:
   - name: DirtyCajunRice
     email: nick@cajun.pro
 dependencies:
-  - name: common
-    repository: https://library-charts.k8s-at-home.com
-    version: 2.2.0
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 2.2.0
