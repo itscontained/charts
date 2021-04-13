@@ -10,13 +10,13 @@
 {{- end -}}
 
 {{- define "jetbrains-projector.configmap.volume" -}}
-name: config
+name: idea-properties
 configMap:
   name: {{ template "common.names.fullname" . }}-config
 {{- end -}}
 
 {{- define "jetbrains-projector.configmap.volumeMount" -}}
-name: config
+name: idea-properties
 mountPath: /tmp/idea.properties
 subPath: idea.properties
 {{- end -}}
