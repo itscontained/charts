@@ -99,6 +99,27 @@ entries:
     urls:
     - https://github.com/itscontained/charts/releases/download/jetbrains-projector-1.0.0-RC2/jetbrains-projector-1.0.0-RC2.tgz
     version: 1.0.0-RC2
+  raw:
+  - apiVersion: v2
+    created: "2021-04-13T01:58:16.429690007Z"
+    description: A place for all the Kubernetes resources which don't already have
+      a home
+    digest: 9455cf5353cfd929fd5a05e41d6e33b8bdb0c5706ab1369400ee6368d5b22f48
+    home: https://github.com/itscontained/charts/blob/master/itscontained/raw
+    keywords:
+    - raw
+    - incubator
+    - incubator-raw
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: raw
+    sources:
+    - https://github.com/helm/charts/blob/master/incubator/raw
+    urls:
+    - https://github.com/itscontained/charts/releases/download/raw-v0.2.5/raw-v0.2.5.tgz
+    version: v0.2.5
   secret-manager:
   - annotations:
       artifacthub.io/crds: |
