@@ -25,12 +25,12 @@
   {{/* Add the tls cert and ssl.properties volumes */}}
   {{- $certsVolume := include "jetbrains-projector.certs.volume" . | fromYaml -}}
   {{- $sslPropsVolume := include "jetbrains-projector.secret.volume" . | fromYaml -}}
-  {{- $additionalVolumes = append $additionalVolumes $certsVolume $sslPropsVolume -}}
+  {{- $additionalVolumes = concat $additionalVolumes (list $certsVolume) (list $sslPropsVolume) -}}
 
   {{/* Add the tls cert and ssl.properties volume mounts */}}
   {{- $certsVolumeMount := include "jetbrains-projector.certs.volumeMount" . | fromYaml -}}
   {{- $sslPropsVolumeMount := include "jetbrains-projector.secret.volumeMount" . | fromYaml -}}
-  {{- $additionalVolumeMounts = append $additionalVolumeMounts $certsVolumeMount $sslPropsVolumeMount -}}
+  {{- $additionalVolumeMounts = concat $additionalVolumeMounts (list $certsVolumeMount) (list $sslPropsVolumeMount) -}}
 
   {{/* Add the ssl.properties env var */}}
   {{- $_ = set .Values.env "ORG_JETBRAINS_PROJECTOR_SERVER_SSL_PROPERTIES_PATH" (printf "/tmp/%s" .Values.sslGen.properties.key) -}}
