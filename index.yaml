@@ -50,6 +50,31 @@ entries:
     - https://github.com/itscontained/charts/releases/download/jetbrains-projector-1.0.0/jetbrains-projector-1.0.0.tgz
     version: 1.0.0
   - apiVersion: v2
+    created: "2021-04-13T01:35:50.709421549Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 2.2.0
+    description: Projector is a technology to run and access Swing GUI applications
+      remotely
+    digest: 230c1a087457afe63e4808f9d822f78c26b69667fec634c9d07d51d7a3da6663
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/jetbrains-projector
+    icon: https://pbs.twimg.com/profile_images/1369990348580216834/dorDbokA_400x400.png
+    keywords:
+    - jetbrains
+    - projector
+    - jetbrains-projector
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: nick@cajun.pro
+      name: DirtyCajunRice
+    name: jetbrains-projector
+    sources:
+    - https://github.com/JetBrains/projector-docker
+    urls:
+    - https://github.com/itscontained/charts/releases/download/jetbrains-projector-1.0.0-RC3/jetbrains-projector-1.0.0-RC3.tgz
+    version: 1.0.0-RC3
+  - apiVersion: v2
     created: "2021-04-13T01:20:27.398175713Z"
     dependencies:
     - name: common
