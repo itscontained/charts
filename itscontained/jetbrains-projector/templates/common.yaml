@@ -34,7 +34,7 @@
   {{- $_ := set .Values.env "ORG_JETBRAINS_PROJECTOR_SERVER_SSL_PROPERTIES_PATH" (printf "/tmp/%s" .Values.sslGen.properties.key) -}}
   {{/* Add the cert file env vars */}}
   {{- $_ := set .Values.env "TLS_CRT" .Values.sslGen.certs.crt -}}
-  {{- $_ := set .Values.env "TLS_KEY" .Values.sslGen.certs.crt -}}
+  {{- $_ := set .Values.env "TLS_KEY" .Values.sslGen.certs.key -}}
 {{- end -}}
 
 {{- $_ := set .Values "additionalVolumes" (deepCopy $additionalVolumes) -}}
