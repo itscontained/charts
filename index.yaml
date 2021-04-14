@@ -715,6 +715,31 @@ entries:
     version: 0.1.0
   traefik:
   - apiVersion: v2
+    appVersion: 2.4.8
+    created: "2021-04-14T07:09:19.800398876Z"
+    description: A Traefik based Kubernetes ingress controller
+    digest: 6421fcf4b4c10ccf8fbc34100c4ffd1cb1f547790f7e41d435f1d61e1fba916a
+    home: https://traefik.io/
+    icon: https://raw.githubusercontent.com/traefik/traefik/v2.3/docs/content/assets/img/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    maintainers:
+    - email: emile@vauge.com
+      name: emilevauge
+    - email: daniel.tomcej@gmail.com
+      name: dtomcej
+    - email: ldez@traefik.io
+      name: ldez
+    name: traefik
+    sources:
+    - https://github.com/traefik/traefik
+    - https://github.com/traefik/traefik-helm-chart
+    type: application
+    urls:
+    - https://github.com/itscontained/charts/releases/download/traefik-9.18.3/traefik-9.18.3.tgz
+    version: 9.18.3
+  - apiVersion: v2
     appVersion: 2.3.1
     created: "2020-10-13T04:44:28.671437784Z"
     description: A Traefik based Kubernetes ingress controller
